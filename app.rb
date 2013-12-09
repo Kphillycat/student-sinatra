@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/thing'
 
 # Why is it a good idea to wrap our App class in a module?
 module StudentSite
@@ -8,10 +9,7 @@ module StudentSite
     end
 
     get '/hello-world' do
-    	@random_numbers = []
-    	20.times do |i|
-    		@random_numbers << i+1
-    	end
+    	@thing = Thing.new("Ashley", 6)
     	erb :hello
     end
 
